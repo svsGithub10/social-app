@@ -3,41 +3,71 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>KodBook Sign up</title>
-		<link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<link rel="stylesheet" type="text/css" th:href="@{/profile.css}">
 	</head>
-	<body>
-		<h1>KodBook</h1>
-		<h3>Update your profile!</h3>
-		<hr>
-		<form action="/updateProfile" method="post" enctype="multipart/form-data">		
-			<label>DOB : </label>
-			<input type = "date" name = "dob">
-			<br><br>	
-			<label>GENDER : </label>
-			<label>M</label><input type = "radio" name = "gender" value = "M">
-			<label>F</label><input type = "radio" name = "gender" value = "F">
-			<label>O</label><input type = "radio" name = "gender" value = "O">
+	
+<body>
+    <!-- Navigation bar -->
+    <nav>
+    	<h3><span>Kod</span>Book</h3>
+        <a href="/goHome"><i class="fas fa-home"></i> <span class="tip">News feed</span></a>
+        <a href="/openCreatePost"><i class="fas fa-plus-circle"></i><span class="tip"> Create post</span></a>
+        <a href="/openMyProfile"><i class="fas fa-user-circle"></i><span class="tip"> My profile</span></a>
+        <a href="/openEditProfile"><i class="fas fa-edit"></i><span class="tip"> Edit profile</span></a>
+        <a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="tip">Logout</span></a>
+    </nav>
+	<!-- Navigation bar -->
+	
+	<h3 class="tagline">User Profile</h3>
+	<div class="login-container">
+		<div class="login-box">
+			<form action="/updateProfile" method="post" enctype="multipart/form-data">
+				<h3>Edit/Update your Profile</h3>
+
+				<div class="dob">
+				<label>Date of Birth :</label>
+				<input type="date" name="dob">
+				</div>
+				<br><br>
+				<!--				<div class="gender">
+				<label>Gender : </label>
+				<label>M</label><input type="radio" name="gender" value="M">
+				<label>F</label><input type="radio" name="gender" value="F">
+				<label>O</label><input type="radio" name="gender" value="O">
+				</div>-->
+				<select id="gender" name="gender">
+					<option class="genderholder" value="" disabled selected>Select Gender</option>
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+					<option value="other">Other</option>
+				</select>
+
+				<br><br>
+				<input type = "text" placeholder="City" name = "city" required>
 			<br><br>
-			<label>CITY : </label>
-			<input type = "text" name = "city">
+			<input type = "text" placeholder="Yourself in a line (Bio)" name = "bio">
 			<br><br>
-			<label>BIO : </label>
-			<input type = "text" name = "bio">
+			<input type = "text" placeholder="College(recent)" name = "college">
 			<br><br>
-			<label>COLLEGE : </label>
-			<input type = "text" name = "college">
+			<input type = "text" placeholder="LinkedIn" name = "linkedIn">
 			<br><br>
-			<label>LINKED IN : </label>
-			<input type = "text" name = "linkedIn">
+			<input type = "text" placeholder="GitHub" name = "gitHub">
 			<br><br>
-			<label>GIT HUB : </label>
-			<input type = "text" name = "gitHub">
-			<br><br>
-			<input type="file" name="profilePic" accept="image/*" />
-			<br>
-			<input type="submit" value = "Update Profile">
-			
-			
-		</form>
-	</body>
+			<label class="profilepic">Profile : </label><br>
+				<input type="file" name="profilePic" accept="image/*" />
+				<br><p>*Note : Profile image name should not contain any special characters and spaces</p>
+				<br><br>
+				<input class="submit" type="submit" value = "Update Profile">
+			</form>
+
+		</div>
+	</div>
+	<div style="height: 20%;">
+		
+	</div>
+</body>
+<footer>
+	
+</footer>
 </html>

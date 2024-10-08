@@ -37,12 +37,13 @@ body {
 
 /* Kodbook Title */
 h1 {
-    font-size: 50px;
+    font-size: 35px;
     color: rgb(0, 0, 0);
     text-align: center;
     margin: 5% 0 0 0;
     span{
 		color: yellow;
+		font-size: 50px;
 	}
 	
 }
