@@ -9,7 +9,9 @@
 <body>
     <!-- Navigation bar -->
     <nav>
+        <div class="apptitle">
     	<h3><span>Kod</span>Book</h3>
+    </div>
         <a href="/goHome"><i class="fas fa-home"></i> <span class="tip">News feed</span></a>
         <a href="/openCreatePost"><i class="fas fa-plus-circle"></i><span class="tip"> Create post</span></a>
         <a href="/openMyProfile"><i class="fas fa-user-circle"></i><span class="tip"> My profile</span></a>
@@ -18,15 +20,21 @@
     </nav>
 	<!-- Navigation bar -->
 
+    <hr>
+
+<!-- create post -->
     <div class="post-form-container">
         <h2>Create a New Post</h2>
         <form id="profileForm" action="/createPost" method="post" enctype="multipart/form-data">
+            
             <textarea name="caption" placeholder="Write your caption here..." required></textarea>
             <br><br>
-            <input type="file" name="photo" accept="image/*" />
+            <p style="color: red">*<strong>Important : </strong>File name containing only alphabetics, numbers and underscore(_) can be uploaded; otherwise you will be terminated with an error*</p>
+            <input type="file" name="photo" class="addphoto" accept="image/*" />
             <br><br>
-            <button type="submit">POST</button>
+            <button type="submit" class="postbut">POST</button>
         </form>
     </div>
+<!-- create post -->
 </body>
 </html>

@@ -52,4 +52,9 @@ public class NavigationController {
 	public String openEditProfile() {
 		return "editProfile";
 	}
+
+	@GetMapping("/profileimg")
+	public String profileimg() {
+		return "profileimg";
+	}
 }

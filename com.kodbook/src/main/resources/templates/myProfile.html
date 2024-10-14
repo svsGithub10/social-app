@@ -10,7 +10,9 @@
 
     <!-- Navigation bar -->
     <nav>
+        <div class="apptitle">
     	<h3><span>Kod</span>Book</h3>
+    </div>
         <a href="/goHome"><i class="fas fa-home"></i> <span class="tip">News feed</span></a>
         <a href="/openCreatePost"><i class="fas fa-plus-circle"></i><span class="tip"> Create post</span></a>
         <a href="/openMyProfile"><i class="fas fa-user-circle"></i><span class="tip"> My profile</span></a>
@@ -18,6 +20,9 @@
         <a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="tip">Logout</span></a>
     </nav>
 	<!-- Navigation bar -->
+
+    <hr>
+
 	
     <div class="profile-header">
         <!-- Cover Photo (optional, but to use space effectively) -->
@@ -27,9 +32,9 @@
 
         <!-- Profile Picture -->
         <div class="profile-picture">
-            <img th:if="${user.photoBase64}" 
+            <a href="/openMyProfile" ><img th:if="${user.photoBase64}" 
                  th:src="'data:image/jpeg;base64,' + ${user.photoBase64}" 
-                 alt="Profile Photo" />
+                 alt="Profile Photo" /></a>
         </div>
 
         <!-- Username -->

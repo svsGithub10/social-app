@@ -3,21 +3,32 @@
 	transition: ease-in-out 0.5s;
 }
 
+/* Navigation bar */
+
 nav {
 	height: 30px;
 	display: flex;
-	background: rgb(253, 254, 224);
+	background: rgb(255, 254, 199);
 	padding: 20px 20px 30px 20px;
 	margin: -10px;
 	
 }
 
+.apptitle{
+	margin: -20px auto;
+	padding: 10px;
+	/* background: white;
+	border: solid #4b4b4b 0.5px;
+	border-radius: 20px; */
+}
+
 nav h3{
 	margin: auto;
-	font-size: 20px;
+	font-size: 30px;
+	text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 	span {
 		color: yellow;
-		font-size: 30px
+		font-size: 40px
 	}
 	
 }
@@ -28,7 +39,7 @@ nav a{
 	/* visibility: hidden; */
 	font-size: 15px;
 	i{
-	font-size: 20px;
+	font-size: 30px;
 	}
 	text-decoration: none;
 	color: black;
@@ -65,3 +76,227 @@ nav a:hover .tip{
 	opacity: 1;
 }
 
+/* Navigation bar */
+
+body{
+	background: #ffffe6;
+}
+
+/* Home/Posts */
+
+.post-card {
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin: 20px auto auto auto;
+    padding: 20px;
+}
+
+/* Post Header - Profile picture and Username */
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.username {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* Post Image */
+.post-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Caption */
+.caption {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.likesandcomments{
+	display: flex;
+}
+
+/* Likes */
+.likesdisplay{
+	display: flex;
+}
+
+.likebutton{
+	background: #fff;
+	border: none;
+	i{
+		font-size: 22px;
+	}
+}
+
+.likes {
+    margin-bottom: 10px;
+}
+
+/* Like and Comment form */
+form {
+    margin-top: 10px;
+}
+
+input[type="submit"] {
+    background-color: #FF9874;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+/* Comment form styling */
+
+.addcomment{
+	margin-left: 20px;
+}
+
+.comment-form input[type="text"] {
+   
+    padding: 4px;
+   
+    border: 1px solid #000000;
+    border-radius: 6px;
+    font-size: 16px;
+    resize: none;
+}
+
+.commentbutton{
+	background: #ffffff;
+	cursor: pointer;
+	border: none;
+	border-radius: 50%;
+	i{
+		font-size: 20px;
+		color: #000000;
+	}
+}
+
+/* Comments section */
+.comments-section {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.comments-section h4 {
+    color: #000000;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.comments-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.comments-section ul li {
+    
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+/* Home/Posts */
+
+/* Post Form Container */
+.post-form-container {
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin: 5% auto;
+    padding: 30px 20px;
+	text-align: center;
+}
+
+.post-form-container h2 {
+    margin: auto auto 20px auto;
+    color: #2A2A2A;
+	
+
+}
+
+textarea {
+    width: 90%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #000000;
+    resize: none;
+	margin: auto;
+	font-size: 16px;
+}
+
+/* Input Fields */
+input[type="file"] {
+    margin-top: 10px;
+}
+
+.postbut {
+    width: 95%;
+    padding: 12px;
+    background-color: rgb(239, 244, 21);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.postbut:hover {
+    background-color: rgb(180, 187, 34);
+    
+}
+
+/* my profile */
+
+.profile-header{
+	display: block;
+	margin: 40px auto auto auto;
+	text-align: center;
+}
+
+.profile-picture{
+	height: 250px;
+	width: 250px;
+	margin: auto;
+	
+}
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	border-radius: 50%;
+	margin: auto;
+}

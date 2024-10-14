@@ -5,12 +5,15 @@
     <title>KodBook Home</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" type="text/css" th:href="@{/profile.css}">
+    
 </head>
 <body>
 
     <!-- Navigation bar -->
     <nav>
+        <div class="apptitle">
     	<h3><span>Kod</span>Book</h3>
+    </div>
         <a href="/goHome"><i class="fas fa-home"></i> <span class="tip">News feed</span></a>
         <a href="/openCreatePost"><i class="fas fa-plus-circle"></i><span class="tip"> Create post</span></a>
         <a href="/openMyProfile"><i class="fas fa-user-circle"></i><span class="tip"> My profile</span></a>
@@ -19,6 +22,9 @@
     </nav>
 	<!-- Navigation bar -->
 
+    <hr>
+
+	<!-- Post -->
     <div class="posts-container">
         <span th:each="post : ${allPosts}">
             <div class="post-card">
@@ -32,6 +38,14 @@
                     <span class="username" th:text="${post.user.username}">Unknown</span>
                 </div>
 
+                <!-- Caption -->
+
+                <p class="caption">
+                    
+                    <span th:text="${post.caption}"></span>
+                </p>
+
+
                 <!-- Post Image -->
                 <div class="post-image">
                     <img th:if="${post.photoBase64}" 
@@ -39,35 +53,38 @@
                          alt="Post Photo" />
                 </div>
 
-                <!-- Caption -->
-                <p class="caption">
-                    <span th:text="${post.caption}"></span>
-                </p>
-
-                <!-- Likes -->
-                <p class="likes">
-                    <strong>Likes:</strong> 
-                    <span th:text="${post.likes}"></span>
-                </p>
-
+                
+                <div class="likesandcomments">
+                <div class="likesdisplay">
                 <!-- Like form -->
+                
                 <form action="/likePost" method="post" class="like-form">
                     <input type="hidden" name="id" th:value="${post.id}">
-                    <input type="submit" value="LIKE POST">
+                    <button type="submit" class="likebutton"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
                 </form>
+                <!-- Likes -->
+                <p class="likes">
+                   
+                    <span th:text="${post.likes}"></span>
+                </p>
+            </div>
 
                 <!-- Comment form -->
+                 <div class="addcomment">
                 <form action="/addComment" method="post" class="comment-form">
                     <input type="hidden" name="id" th:value="${post.id}">
-                    <textarea name="comment" placeholder="Add a comment..." required></textarea>
-                    <input type="submit" value="Comment">
+                    <input type="text" name="comment" placeholder="Add a comment..." required></textarea>
+                    <button type="submit" class="commentbutton"><i class="fa-solid fa-arrow-right"></i></button>
                 </form>
-
+            </div>
+        </div>
+            
                 <!-- Displaying Comments -->
                 <div class="comments-section">
                     <h4>Comments:</h4>
                     <ul>
                         <li th:each="comment : ${post.comments}">
+                            <!-- <span class="username" th:text="${post.user.username}">Unknown</span><br> -->
                             <span th:text="${comment}"></span>
                         </li>
                     </ul>
@@ -75,5 +92,7 @@
             </div>
         </span>
     </div>
+    <!-- Post -->
+    
 </body>
 </html>
