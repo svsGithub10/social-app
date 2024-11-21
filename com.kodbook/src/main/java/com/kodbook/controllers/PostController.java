@@ -47,13 +47,13 @@ public class PostController {
 		}
 		service.createPost(post);
 		//updating user object
-				List<Post> posts = user.getPosts();
-				if(posts == null) {
-					posts = new ArrayList<Post>();
-				}
-				posts.add(post);
-				user.setPosts(posts);
-				userService.updateUser(user);
+		List<Post> posts = user.getPosts();
+		if(posts == null) {
+			posts = new ArrayList<Post>();
+		}
+		posts.add(post);
+		user.setPosts(posts);
+		userService.updateUser(user);
 				
 		List<Post> allPosts = service.fetchAllPosts();
 		model.addAttribute("allPosts", allPosts);

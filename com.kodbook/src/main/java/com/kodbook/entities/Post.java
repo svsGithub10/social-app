@@ -14,8 +14,10 @@ public class Post {
 	private String caption;
 	private int likes;
 	private List<String> comments;
+	
 	@ManyToOne
 	private User user;
+	
 	@Lob
 	@Basic(fetch = FetchType.LAZY)
 	@Column(columnDefinition = "LONGBLOB")
